@@ -1,13 +1,40 @@
-import React from 'react';
-function Menu() {
-    return(
-        <div>
-            <button className="hamburger hamburger--collapse is-active" type="button">
-                <span className="hamburger-box">
-                    <span className="hamburger-inner"></span>
-                </span>
-            </button>
-        </div>
-    )
+import React, { Component } from 'react';
+import '../styles/menu.css';
+class Menu extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            responsive: ''
+        }
+        this.onNavClick = this.onNavClick.bind(this)
+    }
+    onNavClick(){
+      if(!this.state.responsive){
+          this.setState({
+              responsive: 'responsive'
+          })
+      } else {
+          this.setState({
+              responsive: ''
+          })
+      }
+    }
+    render(){
+        return(
+            <div>
+                <div className={`topnav ${this.state.responsive}`} id="myTopnav">
+                    <a href="#home" className="active">HOME</a>
+                    <a href="#news">ABOUT</a>
+                    <a href="#contact">PORTFOLIO</a>
+                    <a href="#about">BLOG</a>
+                    <a href="#contact">CONTACT</a>
+                    <a href="javascript:void(0);" className="icon" onClick={this.onNavClick}>
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </div>
+            </div>
+        )
+    }
+    
 }
 export default Menu
