@@ -28,10 +28,11 @@ class Menu extends Component {
                     <a href="#contact">PORTFOLIO</a>
                     <a href="#about">BLOG</a>
                     <a href="#contact">CONTACT</a>
-                    <a href="javascript:void(0);" className="icon" onClick={this.onNavClick}>
-                        <i class="fa fa-bars"></i>
+                    <a href className="icon" onClick={this.onNavClick}>
+                        <i className="fa fa-bars"></i>
                     </a>
                 </div>
+                <span></span>
             </div>
         )
     }
